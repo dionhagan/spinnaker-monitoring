@@ -436,12 +436,8 @@ class SpectatorClient(object):
       urllib2.Request instance
     """
     request = urllib2.Request(url)
-    headers = self.__options.get('request_headers')
     if authorization:
       request.add_header('Authorization', 'Basic %s' % authorization)
-
-    for header in headers:
-        request.add_header(header['name'], header['token'])
     return request
 
   def collect_metrics(self, service, base_url, params=None):
