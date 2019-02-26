@@ -34,7 +34,13 @@ spectator:
   # If left unset this will be the opposite of "inject_service_tag"
   # because the name is superfluous with the tags but needed to
   # give context to the metric without the tags.
-  decorate_metric_name: 
+  decorate_metric_name:
+
+  # Adds request headers to each request in the spectator client.
+  request_headers:
+    # Example:
+    # - name: x-spinnaker-service-user
+    #   token: example
 
 
 monitor:
